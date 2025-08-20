@@ -4,7 +4,7 @@
 
 <template>
   <div>
-    <div>header</div>
+    <div>header layout</div>
 
     <slot />
   </div>

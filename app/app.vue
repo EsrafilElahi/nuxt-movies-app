@@ -1,10 +1,4 @@
 <script setup>
-import { useQueryClient, useQuery, useMutation } from '@tanstack/vue-query'
-
-// Access QueryClient instance
-const queryClient = useQueryClient()
-
-
 useHeadSafe({
   title: 'movies app',
   titleTemplate: title => title !== 'Moovie Time' ? `${title} · Moovie Time` : title,
@@ -36,13 +30,12 @@ useSeoMeta({
 
   <div>
     <NuxtRouteAnnouncer />
+    <NuxtLoadingIndicator />
 
-    <NuxtLayout>
-      <NuxtLoadingIndicator />
-
-      <NuxtErrorBoundary>
+    <NuxtErrorBoundary>
+      <NuxtLayout>
         <NuxtPage />
-      </NuxtErrorBoundary>
-    </NuxtLayout>
+      </NuxtLayout>
+    </NuxtErrorBoundary>
   </div>
 </template>

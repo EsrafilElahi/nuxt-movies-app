@@ -4,6 +4,10 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ["~/assets/css/main.css"],
 
+  build: {
+    transpile: ["vuetify"],
+  },
+
   modules: [
     "@nuxt/eslint",
     "@nuxt/fonts",
@@ -11,6 +15,7 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "@nuxtjs/tailwindcss",
     "@hebilicious/vue-query-nuxt",
+    "vuetify-nuxt-module",
   ],
 
   runtimeConfig: {
@@ -19,6 +24,15 @@ export default defineNuxtConfig({
       testEnv: "testEnv value",
     },
     apiBaseUrl: process.env.NUXT_API_BASE_URL, // for just serverside
+  },
+
+  vuetify: {
+    moduleOptions: {
+      /* module specific options */
+    },
+    vuetifyOptions: {
+      /* vuetify options */
+    },
   },
 
   app: {
