@@ -1,6 +1,13 @@
 <script setup>
+import { useQueryClient, useQuery, useMutation } from '@tanstack/vue-query'
+
+// Access QueryClient instance
+const queryClient = useQueryClient()
+
+
 useHeadSafe({
   title: 'movies app',
+  titleTemplate: title => title !== 'Moovie Time' ? `${title} · Moovie Time` : title,
   meta: [
     { name: 'description', content: 'movies app' }
   ]
