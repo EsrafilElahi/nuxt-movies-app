@@ -9,8 +9,8 @@ const error = useError();
 </script>
 
 <template>
-  <div>
+  <NuxtLayout>
     <div>error status : {{ error.statusCode }}</div>
     <div>error message : {{ error.message }}</div>
-  </div>
+  </NuxtLayout>
 </template>
