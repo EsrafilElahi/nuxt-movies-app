@@ -14,7 +14,6 @@ export default defineNuxtConfig({
     "@nuxt/icon",
     "@nuxt/image",
     "@nuxtjs/tailwindcss",
-    "@hebilicious/vue-query-nuxt",
     "vuetify-nuxt-module",
   ],
 
