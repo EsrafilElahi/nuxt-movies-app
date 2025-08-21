@@ -3,9 +3,7 @@
 </script>
 
 <template>
-  <div>
-    <div>header layout</div>
-
+  <div class="w-full h-full">
     <slot />
   </div>
 </template>

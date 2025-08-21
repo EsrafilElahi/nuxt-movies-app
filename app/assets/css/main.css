@@ -1,7 +1,13 @@
+@import "./colors.css";
+@import "./typography.css";
+
+
 :root {
   font-family: "Barlow Condensed", sans-serif;
 }
 
-/* .v-application__wrap {
-  background-color: var(--color-secondary);
-} */
+* {
+  font-weight: normal;
+  color: var(--color-background);
+  font-size: 16px;
+}

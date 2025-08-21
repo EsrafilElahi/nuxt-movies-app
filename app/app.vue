@@ -7,6 +7,16 @@ useHeadSafe({
   ]
 });
 
+const theme = useTheme()
+
+watch(() => theme.global.name.value, (newTheme) => {
+  if (newTheme === 'dark') {
+    document?.documentElement?.classList.add('dark')
+  } else {
+    document?.documentElement?.classList.remove('dark')
+  }
+}, { immediate: true })
+
 useSeoMeta({
   title: 'Movies App',
   ogTitle: 'Movies App SEO',
