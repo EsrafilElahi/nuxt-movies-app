@@ -1,5 +1,4 @@
 <script setup>
-import IconStart from '../assets/icons/IconStar.vue'
 import { useTheme } from 'vuetify'
 
 const theme = useTheme();
@@ -34,6 +33,10 @@ watchEffect(() => {
     </VBtn>
 
     <Icon name="custom:star" />
+    <Icon name="uil:github" />
+    <Icon name="custom:user" class="text-red-500 w-10 h-10" />
+    <Icon name="custom:emoji" />
+    <Icon name="custom:setting" />
 
     <v-main>
       <v-container>
