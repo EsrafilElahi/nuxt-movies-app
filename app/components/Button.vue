@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div>
-    <button>click me</button>
-  </div>
+  <VBtn>
+    click
+  </VBtn>
 </template>

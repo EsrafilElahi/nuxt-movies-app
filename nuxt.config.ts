@@ -1,3 +1,6 @@
+import vuetifyConfig from "./app/lib/vuetify.config";
+import { colors } from "./app/lib/colors";
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
@@ -29,9 +32,7 @@ export default defineNuxtConfig({
     moduleOptions: {
       /* module specific options */
     },
-    vuetifyOptions: {
-      /* vuetify options */
-    },
+    vuetifyOptions: vuetifyConfig,
   },
 
   app: {
@@ -50,7 +51,7 @@ export default defineNuxtConfig({
     provider: "google",
     families: [
       {
-        name: "Delius",
+        name: "Barlow Condensed",
         weights: [400, 500, 700],
         styles: ["italic", "normal"],
         subsets: ["latin"],
@@ -65,35 +66,98 @@ export default defineNuxtConfig({
       theme: {
         extend: {
           fontFamily: {
-            sans: ["Delius", "sans-serif"],
+            sans: ["Barlow Condensed", "sans-serif"],
           },
           colors: {
             primary: {
-              DEFAULT: "var(--color-primary)",
-              50: "var(--color-primary-50)",
-              100: "var(--color-primary-100)",
-              200: "var(--color-primary-200)",
-              300: "var(--color-primary-300)",
-              400: "var(--color-primary-400)",
+              DEFAULT: colors.primary.base,
+              tint: {
+                100: colors.primary.tint[100],
+                200: colors.primary.tint[200],
+                300: colors.primary.tint[300],
+                400: colors.primary.tint[400],
+                500: colors.primary.tint[500],
+                600: colors.primary.tint[600],
+                700: colors.primary.tint[700],
+                800: colors.primary.tint[800],
+              },
+              shade: {
+                100: colors.primary.shade[100],
+                200: colors.primary.shade[200],
+                300: colors.primary.shade[300],
+                400: colors.primary.shade[400],
+                500: colors.primary.shade[500],
+                600: colors.primary.shade[600],
+                700: colors.primary.shade[700],
+                800: colors.primary.shade[800],
+              },
             },
             secondary: {
-              DEFAULT: "var(--color-secondary)",
-              50: "var(--color-secondary-100)",
-              100: "var(--color-secondary-100)",
-              200: "var(--color-secondary-200)",
-              300: "var(--color-secondary-300)",
-              400: "var(--color-secondary-400)",
+              DEFAULT: colors.secondary.base,
+              tint: {
+                100: colors.secondary.tint[100],
+                200: colors.secondary.tint[200],
+                300: colors.secondary.tint[300],
+                400: colors.secondary.tint[400],
+                500: colors.secondary.tint[500],
+                600: colors.secondary.tint[600],
+                700: colors.secondary.tint[700],
+                800: colors.secondary.tint[800],
+              },
+              shade: {
+                100: colors.secondary.shade[100],
+                200: colors.secondary.shade[200],
+                300: colors.secondary.shade[300],
+                400: colors.secondary.shade[400],
+                500: colors.secondary.shade[500],
+                600: colors.secondary.shade[600],
+                700: colors.secondary.shade[700],
+                800: colors.secondary.shade[800],
+              },
+            },
+            deep: {
+              DEFAULT: colors.deep.base,
+              tint: {
+                100: colors.deep.tint[100],
+                200: colors.deep.tint[200],
+                300: colors.deep.tint[300],
+                400: colors.deep.tint[400],
+                500: colors.deep.tint[500],
+                600: colors.deep.tint[600],
+                700: colors.deep.tint[700],
+                800: colors.deep.tint[800],
+              },
+              shade: {
+                100: colors.deep.shade[100],
+                200: colors.deep.shade[200],
+                300: colors.deep.shade[300],
+                400: colors.deep.shade[400],
+                500: colors.deep.shade[500],
+                600: colors.deep.shade[600],
+                700: colors.deep.shade[700],
+                800: colors.deep.shade[800],
+              },
+            },
+            background: {
+              DEFAULT: colors.background.base,
+              tint: {
+                100: colors.background.tint[100],
+                200: colors.background.tint[200],
+                300: colors.background.tint[300],
+                400: colors.background.tint[400],
+                500: colors.background.tint[500],
+                600: colors.background.tint[600],
+                700: colors.background.tint[700],
+                800: colors.background.tint[800],
+              },
             },
 
-            "quick-silver": "var(--color-quick-silver)",
-            "bright-gray": "var(--color-bright-gray)",
-            "white-smoke": "var(--color-white-smoke)",
-            "apple-red": "var(--color-apple-red)",
-            "purple-navy": "var(--color-purple-navy)",
-            "tan-tan": "var(--color-tan-tan)",
-
-            white: "var(--color-white)",
-            lotion: "var(--color-lotion)",
+            alizarin: colors.alizarin,
+            goldenFizz: colors.goldenFizz,
+            springGreen: colors.springGreen,
+            white: colors.white,
+            black: colors.black,
+            gray: colors.gray,
           },
         },
       },

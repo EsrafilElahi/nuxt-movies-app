@@ -1,0 +1,95 @@
+/* =================== Desktop =================== */
+/* ------ title ------ */
+.title {
+  font-weight: bold;
+  color: var(--color-background);
+  font-size: 96px;
+}
+
+.title-2 {
+  font-weight: bold;
+  color: var(--color-background);
+  font-size: 72px;
+}
+
+.title-3 {
+  font-weight: bold;
+  color: var(--color-background);
+  font-size: 48px;
+}
+
+.title-bold-4 {
+  font-weight: bold;
+  color: var(--color-background);
+  font-size: 24px;
+}
+
+.title-medium-4 {
+  font-weight: 500;
+  color: var(--color-background);
+  font-size: 24px;
+}
+
+/* ------ body ------ */
+.body-medium {
+  font-weight: 500;
+  color: var(--color-background);
+  font-size: 16px;
+}
+
+.body-normal {
+  font-weight: normal;
+  color: var(--color-background);
+  font-size: 16px;
+}
+
+.body-light {
+  font-weight: lighter;
+  color: var(--color-background);
+  font-size: 16px;
+}
+
+/* =================== Mobile =================== */
+/* ------ title ------ */
+.title-mobile {
+  font-weight: bold;
+  color: var(--color-background);
+  font-size: 48px;
+}
+
+.title-mobile-2 {
+  font-weight: bold;
+  color: var(--color-background);
+  font-size: 24px;
+}
+
+.title-mobile-bold-3 {
+  font-weight: bold;
+  color: var(--color-background);
+  font-size: 20px;
+}
+
+.title-mobile-medium-3 {
+  font-weight: 500;
+  color: var(--color-background);
+  font-size: 20px;
+}
+
+/*  ------ body ------ */
+.body-mobile-medium {
+  font-weight: 500;
+  color: var(--color-background);
+  font-size: 14px;
+}
+
+.body-mobile-normal {
+  font-weight: normal;
+  color: var(--color-background);
+  font-size: 14px;
+}
+
+.body-mobile-light {
+  font-weight: lighter;
+  color: var(--color-background);
+  font-size: 14px;
+}

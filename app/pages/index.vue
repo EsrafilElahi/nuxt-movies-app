@@ -4,10 +4,15 @@
 
 <template>
   <div>
-    <div class="bg-red-400 text-green-500">index nuxtjs file</div>
+    <div class="bg-primary-tint-800 text-secondary-tint-800">index nuxtjs file</div>
 
-    <v-btn>
-      Button
-    </v-btn>
+    <VBtn>
+      Button default
+    </VBtn>
+
+
+    <VBtn variant="outlined" color="primary">
+      Button outlined
+    </VBtn>
   </div>
 </template>

@@ -1,29 +1,94 @@
 :root {
-  /* primary */
-  --color-primary: #f6b100;
-  --color-primary-50: #fff8e6;
-  --color-primary-100: #fdefcc;
-  --color-primary-200: #fce099;
-  --color-primary-300: #fad066;
-  --color-primary-400: #f8c133;
+  /* =================== primary (summer sky) =================== */
+  --color-primary: #228ee5;
+  /* primary tint */
+  --color-primary-tint-100: #3c9be8;
+  --color-primary-tint-200: #55a7eb;
+  --color-primary-tint-300: #6db4ee;
+  --color-primary-tint-400: #85c0f1;
+  --color-primary-tint-500: #9ecdf4;
+  --color-primary-tint-600: #b6d9f6;
+  --color-primary-tint-700: #cee6f9;
+  --color-primary-tint-800: #e7f2fc;
 
-  /* secondary */
-  --color-secondary: #181a20;
-  --color-secondary-50: #e8e9e9;
-  --color-secondary-100: #d1d1d2;
-  --color-secondary-200: #a3a3a6;
-  --color-secondary-300: #747679;
-  --color-secondary-400: #46484d;
+  /* primary shade */
+  --color-primary-shade-100: #187dd0;
+  --color-primary-shade-200: #156bb2;
+  --color-primary-shade-300: #115994;
+  --color-primary-shade-400: #0e4877;
+  --color-primary-shade-500: #0e4877;
+  --color-primary-shade-600: #07243b;
+  --color-primary-shade-700: #03121e;
+  --color-primary-shade-800: #000000;
 
-  /* additional colors */
-  --color-quick-silver: #9f9f9f;
-  --color-bright-gray: #eeeeee;
-  --color-white-smoke: #f5f5f5;
-  --color-apple-red: #ff0b0b;
-  --color-purple-navy: #56548c;
-  --color-tan-tan: #d8996c;
+  /* =================== secondary (alice blue) =================== */
+  --color-secondary: #ebfaff;
+  /* secondary tint */
+  --color-secondary-tint-100: #e1eff3;
+  --color-secondary-tint-200: #d8e4e8;
+  --color-secondary-tint-300: #ced9dc;
+  --color-secondary-tint-400: #c4ced1;
+  --color-secondary-tint-500: #bac3c5;
+  --color-secondary-tint-600: #b1b7ba;
+  --color-secondary-tint-700: #a7acae;
+  --color-secondary-tint-800: #9da1a3;
 
-  /* background */
+  /* secondary shade */
+  --color-secondary-shade-100: #beefff;
+  --color-secondary-shade-200: #beefff;
+  --color-secondary-shade-300: #65d9ff;
+  --color-secondary-shade-400: #39cdff;
+  --color-secondary-shade-500: #0cc2ff;
+  --color-secondary-shade-600: #00a7df;
+  --color-secondary-shade-700: #0086b2;
+  --color-secondary-shade-800: #006486;
+
+  /* =================== deep (deep cerise) =================== */
+  --color-deep: #e93f9c;
+  /* deep tint */
+  --color-deep-tint-100: #e93f9c;
+  --color-deep-tint-200: #ec5baa;
+  --color-deep-tint-300: #ef76b9;
+  --color-deep-tint-400: #f291c7;
+  --color-deep-tint-500: #f291c7;
+  --color-deep-tint-600: #f9c8e3;
+  --color-deep-tint-700: #fce4f1;
+  --color-deep-tint-800: #ffffff;
+
+  /* deep shade */
+  --color-deep-shade-100: #d0187d;
+  --color-deep-shade-200: #b2156b;
+  --color-deep-shade-300: #941159;
+  --color-deep-shade-400: #770e48;
+  --color-deep-shade-500: #590a36;
+  --color-deep-shade-600: #3b0724;
+  --color-deep-shade-700: #1e0312;
+  --color-deep-shade-800: #000000;
+
+  /* =================== background (dark green) =================== */
+  --color-background: #030a1b;
+
+  --color-background-tint-100: #091e51;
+  --color-background-tint-200: #0f3187;
+  --color-background-tint-300: #1545bd;
+  --color-background-tint-400: #275ee7;
+  --color-background-tint-500: #275ee7;
+  --color-background-tint-600: #5d86ed;
+  --color-background-tint-700: #93aef3;
+  --color-background-tint-800: #ffffff;
+
+  /* other colors */
+  --color-alizarin: #e52222;
+  --color-golden-fizz: #e5db22;
+  --color-spring-green: #00fb71;
   --color-white: #ffffff;
-  --color-lotion: #fcfcfc;
+  --color-black: #000000;
+  --color-gray: #808080;
+}
+
+[data-theme="dark"] {
+  --color-primary: #2196F3;
+  --color-secondary: #424242;
+  --color-background: #121212;
+  --color-surface: #1E1E1E;
 }
