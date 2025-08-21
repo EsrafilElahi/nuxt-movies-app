@@ -30,14 +30,14 @@ useSeoMeta({
       rel="stylesheet">
   </Head>
 
-  <div>
-    <NuxtRouteAnnouncer />
-    <NuxtLoadingIndicator />
+  <NuxtRouteAnnouncer />
+  <NuxtLoadingIndicator />
 
+  <VApp>
     <NuxtErrorBoundary>
       <NuxtLayout>
         <NuxtPage />
       </NuxtLayout>
     </NuxtErrorBoundary>
-  </div>
+  </VApp>
 </template>

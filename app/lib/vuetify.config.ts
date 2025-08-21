@@ -11,9 +11,9 @@ export default defineVuetifyConfiguration({
       color: "primary",
       variant: "elevated",
 
-      // style: {
-      //   color: "var(--color-secondary) !important",
-      // },
+      style: {
+        textTransform: "none",
+      },
       variants: [
         {
           props: { variant: "elevated", color: "primary" },
@@ -44,8 +44,8 @@ export default defineVuetifyConfiguration({
             "::deep(.v-btn__content)": {
               // color: colors.background.base + " !important",
               color: "#d0c !important",
-              fontWeight: "bold",
-              fontSize: "16px",
+              // fontWeight: "bold",
+              // fontSize: "16px",
             },
           },
         },
@@ -54,7 +54,7 @@ export default defineVuetifyConfiguration({
     VTextField: {
       variant: "outlined",
       density: "comfortable",
-      color: "primary",
+      color: "#d0c",
       hideDetails: "auto",
     },
     VSelect: {
@@ -99,7 +99,7 @@ export default defineVuetifyConfiguration({
     },
   },
 
-  directives: true,
+  directives: false,
 
   icons: {
     defaultSet: "mdi",
@@ -125,27 +125,17 @@ export default defineVuetifyConfiguration({
         colors: {
           primary: colors.primary.base,
           secondary: colors.secondary.base,
-          accent: "#82B1FF",
-          error: "#FF5252",
-          info: "#2196F3",
-          success: "#4CAF50",
-          warning: "#FFC107",
-          background: "#FFFFFF",
-          surface: "#FFFFFF",
+          background: colors.secondary.base,
+          "on-background": colors.background.base,
         },
       },
       dark: {
         dark: true,
         colors: {
-          primary: colors.dark.primary,
-          secondary: colors.dark.secondary,
-          accent: "#FF4081",
-          error: "#FF5252",
-          info: "#2196F3",
-          success: "#4CAF50",
-          warning: "#FFC107",
-          background: "#121212",
-          surface: "#1E1E1E",
+          primary: colors.primary.base,
+          secondary: colors.secondary.base,
+          background: colors.background.base,
+          "on-background": colors.secondary.base,
         },
       },
     },

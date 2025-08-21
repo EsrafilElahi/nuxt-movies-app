@@ -37,12 +37,6 @@ export default defineNuxtPlugin((nuxt) => {
 
   nuxt.vueApp.use(VueQueryPlugin, options);
 
-  // DevTools (فقط در حالت توسعه)
-  if (import.meta.dev) {
-    const VueQueryDevTools = import("@tanstack/vue-query-devtools");
-    nuxt.vueApp.component("VueQueryDevTools", VueQueryDevTools);
-  }
-
   // Server-side
   if (import.meta.server) {
     nuxt.hooks.hook("app:rendered", () => {
