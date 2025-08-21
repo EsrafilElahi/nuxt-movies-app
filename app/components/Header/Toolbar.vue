@@ -1,6 +1,7 @@
 <script setup>
-const isDarkMode = useDarkTheme();
-
+import NavbarLink from './NavbarLink.vue';
+import ToggleLogo from './ToggleLogo.vue';
+import ToggleTheme from './ToggleTheme.vue';
 </script>
 
 <template>

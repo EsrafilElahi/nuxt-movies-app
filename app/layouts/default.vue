@@ -1,4 +1,6 @@
 <script setup>
+import Toolbar from '~/components/Header/Toolbar.vue';
+
 
 </script>
 

@@ -33,7 +33,7 @@ const isActive = (path) => {
 </script>
 
 <template>
-  <div class="flex items-center gap-5">
+  <div class="flex items-center gap-5 ml-10">
     <div v-for="link in links">
       <NuxtLink :key="link.id" :to="link.path" :class="[
         'title-medium-4 pb-1',

@@ -93,3 +93,35 @@
   color: var(--color-background);
   font-size: 14px;
 }
+
+/* فقط برای عناصر با کلاس خاص */
+/* [data-theme="dark"] .title,
+[data-theme="dark"] .body-normal,
+[data-theme="dark"] .text-custom {
+  color: var(--color-secondary);
+} */
+
+
+[data-theme="dark"] {
+  .title,
+  .title-2, 
+  .title-3,
+  .title-bold-4,
+  .title-medium-4,
+  .body-medium,
+  .body-normal,
+  .body-light {
+    color: #d0c !important;
+  }
+}
+
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6,
+[data-theme="dark"] p,
+[data-theme="dark"] span {
+  color: var(--text-secondary) !important;
+}

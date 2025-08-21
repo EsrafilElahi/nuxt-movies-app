@@ -23,6 +23,6 @@ import MyComponent from './MyComponent.vue'
 
 <template>
 	<MyComponent v-slot="slotProps">
-  	{{ slotProps.text }} {{ slotProps.count }}
-  </MyComponent>
+		{{ slotProps.text }} {{ slotProps.count }}
+	</MyComponent>
 </template>

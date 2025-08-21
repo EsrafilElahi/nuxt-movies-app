@@ -1,5 +1,6 @@
 <script setup>
 import { useTheme } from 'vuetify'
+import HeroSection from '~/components/Header/HeroSection.vue';
 
 const theme = useTheme();
 
@@ -14,11 +15,7 @@ watchEffect(() => {
 </script>
 
 <template>
-
-
   <div class="w-full h-full">
-
     <HeroSection />
-
   </div>
 </template>
