@@ -1,55 +1,31 @@
 <script setup>
+const props = defineProps(['data', 'title', 'seeMoreUrl']);
+const router = useRouter();
 
-const sliders = ref([
-  {
-    id: 1,
-    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg'
-  },
-  {
-    id: 2,
-    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg'
-  },
-  {
-    id: 3,
-    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg'
-  },
-  {
-    id: 4,
-    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg'
-  },
-  {
-    id: 5,
-    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg'
-  },
-  {
-    id: 6,
-    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg'
-  },
-  {
-    id: 7,
-    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg'
-  },
-  {
-    id: 8,
-    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg'
-  },
-  {
-    id: 9,
-    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg'
-  },
-  {
-    id: 10,
-    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg'
-  }
-])
+
+const handleRouteSeeMore = () => {
+  return router.push(props.seeMoreUrl)
+}
+
 
 </script>
 
 <template>
-  <div
-    class="mt-20 z-10 flex justify-between items-center gap-[32px] min-h-[300px] px-[48px] pb-3 select-none my-10 overflow-x-auto">
-    <div v-for="slide in sliders" :key="slide.id" class="min-w-[200px] min-h-[300px]">
-      <NuxtImg :src="slide.img" class="min-w-[200px] min-h-[300px] object-cover" />
+  <div class="mt-20 z-10 flex flex-col min-h-[300px] px-[48px] gap-[28px] select-none my-10 overflow-x-hidden">
+    <div class="flex justify-between items-end">
+      <span v-capitalize class="title-2 dark:text-secondary">{{ title }}</span>
+      <span @click="handleRouteSeeMore"
+        class="title-medium-4 flex items-center cursor-pointer text-primary hover:!text-background dark:hover:!text-secondary group">see
+        more
+        <Icon name="custom:arrow-right" size="22"
+          class="mt-2 ml-2 text-primary group-hover:!text-background dark:group-hover:!text-secondary" />
+      </span>
+    </div>
+
+    <div class="flex items-center flex-nowrap gap-[32px] pb-3 overflow-x-auto">
+      <div v-for="slide in data" :key="slide.id" class="min-w-[200px] h-[300px] flex-shrink-0">
+        <NuxtImg :src="slide.img" class="min-w-[200px] h-[300px] object-cover rounded-lg cursor-pointer" />
+      </div>
     </div>
   </div>
 </template>

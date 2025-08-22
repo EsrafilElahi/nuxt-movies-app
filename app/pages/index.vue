@@ -12,12 +12,56 @@ watchEffect(() => {
   console.log('theme watchEffect :', theme)
 })
 
+const sliders = ref([
+  {
+    id: 1,
+    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg'
+  },
+  {
+    id: 2,
+    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg'
+  },
+  {
+    id: 3,
+    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg'
+  },
+  {
+    id: 4,
+    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg'
+  },
+  {
+    id: 5,
+    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg'
+  },
+  {
+    id: 6,
+    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg'
+  },
+  {
+    id: 7,
+    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg'
+  },
+  {
+    id: 8,
+    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg'
+  },
+  {
+    id: 9,
+    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg'
+  },
+  {
+    id: 10,
+    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg'
+  }
+]);
+
+
 </script>
 
 <template>
   <div>
     <HeroSection />
 
-    <Slider />
+    <Slider :title="'trends'" :seeMoreUrl="'/movies'" :data="sliders" />
   </div>
 </template>
