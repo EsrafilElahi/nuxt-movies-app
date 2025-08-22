@@ -61,7 +61,7 @@ const sliders = ref([
 </script>
 
 <template>
-  <div class="grid grid-cols-5 gap-10">
+  <div class="grid grid-cols-6 gap-10">
     <div v-for="item in sliders" :key="item.id">
       <FilmItem :item="item" />
     </div>

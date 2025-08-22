@@ -37,14 +37,8 @@ const setChoose = (newVal) => {
 
 
     <div class="flex items-center flex-nowrap gap-[32px] pb-3 overflow-x-auto">
-      <div v-for="slide in data" :key="slide.id" class="min-w-[200px] h-[300px] flex-shrink-0 relative">
-        <NuxtImg :src="slide.img" class="min-w-[200px] h-[300px] object-cover rounded-lg cursor-pointer" />
-        <div class="absolute inset-0 bg-black !opacity-[50%] rounded-lg z-10 cursor-pointer"></div>
-
-        <h3
-          class="title-2 text-secondary absolute !top-1/2 !left-1/2 !-translate-x-1/2 cursor-pointer !-translate-y-1/2 z-20 p-3">
-          Comedy
-        </h3>
+      <div v-for="slide in data" :key="slide.id" class="w-[200px] h-[300px] flex-shrink-0 relative">
+        <CollectionFilmItem :item="slide" />
       </div>
     </div>
   </div>

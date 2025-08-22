@@ -23,7 +23,7 @@ const handleRouteSeeMore = () => {
     </div>
 
     <div class="flex items-center flex-nowrap gap-[32px] pb-3 overflow-x-auto">
-      <div v-for="slide in data" :key="slide.id" class="min-w-[200px] h-[300px] flex-shrink-0">
+      <div v-for="slide in data" :key="slide.id" class="min-w-[100px] h-[300px] flex-shrink-0">
         <FilmItem :item="slide" />
       </div>
     </div>

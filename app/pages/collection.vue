@@ -17,6 +17,7 @@ const tabs = [
   }
 ];
 
+
 const chosenTab = ref({
   id: 1,
   name: 'movies'
@@ -93,9 +94,9 @@ const sliders = ref([
       <Tabs :tabs="tabs" :chosenTab="chosenTab" @setChoose="setChoose" />
     </div>
 
-    <div class="grid grid-cols-5 gap-10">
+    <div class="grid grid-cols-6 gap-10">
       <div v-for="item in sliders" :key="item.id">
-        <FilmItem :item="item" />
+        <CollectionFilmItem :item="item" />
       </div>
     </div>
   </div>
