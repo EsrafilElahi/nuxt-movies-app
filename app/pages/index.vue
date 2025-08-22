@@ -1,7 +1,19 @@
 <script setup>
+import { defineAsyncComponent } from 'vue'
 import { useTheme } from 'vuetify'
 import HeroSection from '~/components/Header/HeroSection.vue';
 
+const Pricing = defineAsyncComponent({
+  loader: () => import('~/components/pricing.vue'),
+  loadingComponent: {
+    template: '<div>Loading Pricing...</div>'
+  },
+  errorComponent: {
+    template: '<div>Error loading Pricing component</div>'
+  },
+  delay: 200,
+  timeout: 3000
+})
 const theme = useTheme();
 
 watch(theme, (newVal) => {
@@ -88,7 +100,20 @@ onMounted(() => {
     <Slider :title="'movies'" :seeMoreUrl="'/movies'" :data="sliders" />
     <Slider :title="'series'" :seeMoreUrl="'/series'" :data="sliders" />
 
-    <Pricing ref="pricingRef" />
+
+    <Suspense>
+      <template #default>
+        <Pricing ref="pricingRef" />
+      </template>
+
+      <template #fallback>
+        <div class="flex justify-center items-center h-64">
+          <div>Loading Pricing...</div>
+        </div>
+      </template>
+    </Suspense>
+
+    <!-- <Pricing ref="pricingRef" /> -->
 
     <CollectionSlider :title="'collection'" :seeMoreUrl="'/collection'" :data="sliders" />
 
