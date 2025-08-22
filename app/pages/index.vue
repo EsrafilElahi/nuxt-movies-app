@@ -15,43 +15,53 @@ watchEffect(() => {
 const sliders = ref([
   {
     id: 1,
-    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg'
+    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg',
+    title: 'Comedy'
   },
   {
     id: 2,
-    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg'
+    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg',
+    title: 'Comedy'
   },
   {
     id: 3,
-    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg'
+    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg',
+    title: 'Comedy'
   },
   {
     id: 4,
-    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg'
+    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg',
+    title: 'Comedy'
   },
   {
     id: 5,
-    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg'
+    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg',
+    title: 'Comedy'
   },
   {
     id: 6,
-    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg'
+    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg',
+    title: 'Comedy'
   },
   {
     id: 7,
-    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg'
+    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg',
+    title: 'Comedy'
   },
   {
     id: 8,
-    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg'
+    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg',
+    title: 'Comedy'
   },
   {
     id: 9,
-    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg'
+    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg',
+    title: 'Comedy'
   },
   {
     id: 10,
-    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg'
+    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg',
+    title: 'Comedy'
   }
 ]);
 
@@ -68,7 +78,6 @@ onMounted(() => {
   PricingRef.value = handlePricingRefFn
 })
 
-
 </script>
 
 <template>
@@ -80,5 +89,7 @@ onMounted(() => {
     <Slider :title="'series'" :seeMoreUrl="'/series'" :data="sliders" />
 
     <Pricing ref="pricingRef" />
+
+    <CollectionSlider :title="'collection'" :seeMoreUrl="'/series'" :data="sliders" />
   </div>
 </template>

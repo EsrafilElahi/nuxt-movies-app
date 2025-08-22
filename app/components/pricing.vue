@@ -3,7 +3,7 @@ const pricingRef = useTemplateRef('pricing');
 
 const handleScrollToRef = () => {
   if (pricingRef.value) {
-    pricingRef.value.scrollIntoView({ block: 'start', behavior: 'smooth' })
+    pricingRef.value.scrollIntoView({ block: 'center', behavior: 'smooth' })
   }
 };
 
