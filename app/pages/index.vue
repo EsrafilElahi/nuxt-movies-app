@@ -94,6 +94,5 @@ onMounted(() => {
 
     <Studios />
 
-    <Footer />
   </div>
 </template>

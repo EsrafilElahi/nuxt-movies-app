@@ -9,5 +9,7 @@ import Toolbar from '~/components/Header/Toolbar.vue';
     <Toolbar />
 
     <slot />
+
+    <Footer />
   </div>
 </template>

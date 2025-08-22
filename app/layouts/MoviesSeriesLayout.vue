@@ -19,6 +19,8 @@ const title = computed(() => route.meta?.layoutProps?.title || 'movies');
 
     <div class="mt-[330px] mb-10 px-[48px]">
       <slot />
+
+      <Footer />  
     </div>
   </div>
 </template>
