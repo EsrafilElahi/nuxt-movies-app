@@ -90,7 +90,7 @@ onMounted(() => {
 
     <Pricing ref="pricingRef" />
 
-    <CollectionSlider :title="'collection'" :seeMoreUrl="'/series'" :data="sliders" />
+    <CollectionSlider :title="'collection'" :seeMoreUrl="'/collection'" :data="sliders" />
 
     <Studios />
 
