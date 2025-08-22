@@ -15,7 +15,9 @@ watchEffect(() => {
 </script>
 
 <template>
-  <div class="w-full h-full">
+  <div>
     <HeroSection />
+
+    <Slider />
   </div>
 </template>

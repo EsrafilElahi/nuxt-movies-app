@@ -1,5 +1,6 @@
 <script setup>
 import Carousel from './Carousel.vue';
+import Toolbar from './Toolbar.vue';
 
 const slides = [
   { id: 1, src: 'https://cdn.britannica.com/35/238335-050-2CB2EB8A/Lionel-Messi-Argentina-Netherlands-World-Cup-Qatar-2022.jpg', alt: 'Slide 3' },
@@ -9,9 +10,11 @@ const slides = [
 </script>
 
 <template>
-  <div class="w-full h-screen">
+  <div class="w-full h-screen relative">
     <NuxtImg src="https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg"
       alt="hero section" class="w-full h-full object-cover" />
+
+    <Toolbar />
 
     <HeaderTextMovieInfo />
 

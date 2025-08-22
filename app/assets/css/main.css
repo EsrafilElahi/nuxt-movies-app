@@ -1,7 +1,6 @@
 @import "./colors.css";
 @import "./typography.css";
 
-
 :root {
   font-family: "Barlow Condensed", sans-serif;
 }
@@ -11,4 +10,13 @@
   color: var(--color-background);
   font-size: 16px;
   line-height: normal;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
 }
