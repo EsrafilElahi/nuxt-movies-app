@@ -100,7 +100,6 @@ onMounted(() => {
     <Slider :title="'movies'" :seeMoreUrl="'/movies'" :data="sliders" />
     <Slider :title="'series'" :seeMoreUrl="'/series'" :data="sliders" />
 
-
     <Suspense>
       <template #default>
         <Pricing ref="pricingRef" />
@@ -112,8 +111,6 @@ onMounted(() => {
         </div>
       </template>
     </Suspense>
-
-    <!-- <Pricing ref="pricingRef" /> -->
 
     <CollectionSlider :title="'collection'" :seeMoreUrl="'/collection'" :data="sliders" />
 
