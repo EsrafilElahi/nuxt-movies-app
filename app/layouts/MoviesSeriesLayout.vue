@@ -12,15 +12,15 @@ const title = computed(() => route.meta?.layoutProps?.title || 'movies');
     <Toolbar />
     <SearchBar :title="title" />
 
-    <h1 class="absolute top-[14.4%] left-[23%] title-3 text-background-tint-100 dark:text-secondary"
-      :class="title === 'collection' ? '!top-[13.5%] !left-[21%]' : ''" v-capitalize>{{
+    <h1 class="absolute top-[13%] left-[23%] title-3 text-background-tint-100 dark:text-secondary"
+      :class="title === 'collection' ? '!top-[12.3%] !left-[21%]' : ''" v-capitalize>{{
         title
       }}</h1>
 
     <div class="mt-[330px] mb-10 px-[48px]">
       <slot />
 
-      <Footer />  
+      <Footer />
     </div>
   </div>
 </template>

@@ -3,7 +3,7 @@ defineProps(['item'])
 </script>
 
 <template>
-  <NuxtLink :to="`/films/${item.id}`" class="w-[200px] h-[300px] rounded-lg cursor-pointer relative">
+  <NuxtLink :to="`/collection/${item.id}`" class="w-[200px] h-[300px] rounded-lg cursor-pointer relative">
     <NuxtImg :src="item.img" class="w-full h-[300px] object-cover rounded-lg cursor-pointer" />
     <div class="absolute inset-0 bg-black !opacity-[50%] rounded-lg z-10 cursor-pointer"></div>
 

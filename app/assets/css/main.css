@@ -27,11 +27,13 @@
 }
 
 .v-field__input {
+  padding-top: 0 !important;
   color: var(--color-background) !important;
   font-size: 18px !important;
 }
 
 .dark .v-field__input {
+  padding-top: 0 !important;
   color: var(--color-secondary) !important;
   font-size: 18px !important;
 }
