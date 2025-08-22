@@ -91,5 +91,7 @@ onMounted(() => {
     <Pricing ref="pricingRef" />
 
     <CollectionSlider :title="'collection'" :seeMoreUrl="'/series'" :data="sliders" />
+
+    <Studios />
   </div>
 </template>
