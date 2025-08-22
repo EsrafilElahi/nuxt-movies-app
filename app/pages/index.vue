@@ -93,5 +93,7 @@ onMounted(() => {
     <CollectionSlider :title="'collection'" :seeMoreUrl="'/series'" :data="sliders" />
 
     <Studios />
+
+    <Footer />
   </div>
 </template>
