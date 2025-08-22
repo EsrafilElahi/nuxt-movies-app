@@ -55,6 +55,19 @@ const sliders = ref([
   }
 ]);
 
+const pricingRef = ref(null);
+const PricingRef = useState('handlePricingRef');
+
+const handlePricingRefFn = () => {
+  if (pricingRef.value) {
+    pricingRef.value.handleScrollToRef()
+  }
+}
+
+onMounted(() => {
+  PricingRef.value = handlePricingRefFn
+})
+
 
 </script>
 
@@ -63,5 +76,9 @@ const sliders = ref([
     <HeroSection />
 
     <Slider :title="'trends'" :seeMoreUrl="'/movies'" :data="sliders" />
+    <Slider :title="'movies'" :seeMoreUrl="'/movies'" :data="sliders" />
+    <Slider :title="'series'" :seeMoreUrl="'/series'" :data="sliders" />
+
+    <Pricing ref="pricingRef" />
   </div>
 </template>

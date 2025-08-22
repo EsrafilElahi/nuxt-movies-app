@@ -1,5 +1,12 @@
 <script setup>
 const route = useRoute();
+const handlePricingRef = useState('handlePricingRef')
+
+const scrollToPricing = () => {
+  if (handlePricingRef.value) {
+    handlePricingRef.value()
+  }
+}
 
 const links = ref([
   {
@@ -46,5 +53,13 @@ const isActive = (path) => {
       </NuxtLink>
     </div>
 
+    <div @click="scrollToPricing" :class="[
+      'title-medium-4 pb-1 cursor-pointer',
+      'transition-colors duration-200 ease-in-out',
+      'hover:text-secondary',
+      'dark:text-secondary dark:hover:text-background',
+    ]">
+      Pricing
+    </div>
   </div>
 </template>
