@@ -54,7 +54,7 @@ const isActive = (path) => {
     </div>
 
     <div @click="scrollToPricing" :class="[
-      'title-medium-4 pb-1 cursor-pointer',
+      'title-medium-4 cursor-pointer',
       'transition-colors duration-200 ease-in-out',
       'hover:text-secondary',
       'dark:text-secondary dark:hover:text-background',

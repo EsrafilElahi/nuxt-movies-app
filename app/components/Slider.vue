@@ -11,9 +11,9 @@ const handleRouteSeeMore = () => {
 </script>
 
 <template>
-  <div class="mt-20 z-10 flex flex-col min-h-[300px] px-[48px] gap-[28px] select-none my-10 overflow-x-hidden">
+  <div class="mt-20 z-10 flex flex-col min-h-[300px] px-[48px] gap-4 select-none my-10 overflow-x-hidden">
     <div class="flex justify-between items-end">
-      <span v-capitalize class="title-2 dark:text-secondary">{{ title }}</span>
+      <span v-capitalize class="title-3 dark:text-secondary">{{ title }}</span>
       <span @click="handleRouteSeeMore"
         class="title-medium-4 flex items-center cursor-pointer text-primary hover:!text-background dark:hover:!text-secondary group">see
         more
