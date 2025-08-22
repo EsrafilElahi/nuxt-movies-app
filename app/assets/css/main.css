@@ -20,3 +20,18 @@
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+.v-field__outline__start,
+.v-field__outline__end {
+  border: 0 !important;
+}
+
+.v-field__input {
+  color: var(--color-background) !important;
+  font-size: 18px !important;
+}
+
+.dark .v-field__input {
+  color: var(--color-secondary) !important;
+  font-size: 18px !important;
+}

@@ -52,11 +52,26 @@ export default defineVuetifyConfiguration({
       ],
     },
     VTextField: {
-      variant: "outlined",
+      variant: "plain", // تغییر از outlined به plain
       density: "comfortable",
       color: "#d0c",
       hideDetails: "auto",
+      style: {
+        "& .v-field__outline": {
+          display: "none !important", // حذف outline
+        },
+        "& .v-field__field": {
+          border: "none !important", // حذف border
+        },
+        "&:hover .v-field__outline": {
+          display: "none !important", // حذف outline در hover
+        },
+        "&.v-field--focused .v-field__outline": {
+          display: "none !important", // حذف outline در focus
+        },
+      },
     },
+
     VSelect: {
       variant: "outlined",
       density: "comfortable",

@@ -24,7 +24,7 @@ const handleRouteSeeMore = () => {
 
     <div class="flex items-center flex-nowrap gap-[32px] pb-3 overflow-x-auto">
       <div v-for="slide in data" :key="slide.id" class="min-w-[200px] h-[300px] flex-shrink-0">
-        <NuxtImg :src="slide.img" class="min-w-[200px] h-[300px] object-cover rounded-lg cursor-pointer" />
+        <FilmItem :item="slide" />
       </div>
     </div>
   </div>
