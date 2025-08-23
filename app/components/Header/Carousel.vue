@@ -1,12 +1,12 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 import EmblaCarousel from 'embla-carousel'
-import AutoScroll from 'embla-carousel-auto-scroll'
+// import AutoScroll from 'embla-carousel-auto-scroll'
 
 const props = defineProps({
   items: { type: Array, required: true },
-  options: { type: Object, default: () => ({ loop: true }) },
-  autoScroll: { type: Object, default: () => ({ speed: 4, playOnInit: true }) }
+  options: { type: Object, default: () => ({ loop: false }) },
+  // autoScroll: { type: Object, default: () => ({ speed: 4, playOnInit: true }) }
 })
 
 const emblaNode = ref(null)
@@ -14,7 +14,7 @@ const emblaApi = ref(null)
 const activeIndex = ref(0)
 
 onMounted(() => {
-  emblaApi.value = EmblaCarousel(emblaNode.value, props.options, [AutoScroll(props.autoScroll)])
+  emblaApi.value = EmblaCarousel(emblaNode.value, props.options, [])
 
   // وقتی انتخاب تغییر کرد
   emblaApi.value.on('select', () => {

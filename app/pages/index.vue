@@ -1,7 +1,7 @@
 <script setup>
 import { defineAsyncComponent } from 'vue'
 import { useTheme } from 'vuetify'
-import { useGetMovies } from '~/api/movie/movieVueQuery';
+import { useGetMovies, useGetTrendMovies } from '~/api/homeApi/homeVueQuery';
 import HeroSection from '~/components/Header/HeroSection.vue';
 
 const Pricing = defineAsyncComponent({
@@ -88,9 +88,10 @@ onMounted(() => {
 });
 
 const { data } = useGetMovies();
+const { data: trendsMovies } = useGetTrendMovies();
 
 watchEffect(() => {
-  console.log('dataaaaaaa :', data)
+  console.log('getMoviesssssssss slice :', data)
 })
 
 </script>

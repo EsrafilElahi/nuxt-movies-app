@@ -11,6 +11,10 @@ export default defineNuxtConfig({
     transpile: ["vuetify"],
   },
 
+  plugins: [
+    '~/plugins/api.ts'
+  ],
+
   modules: [
     "@nuxt/eslint",
     "@nuxt/fonts",

@@ -1,8 +1,10 @@
+import { ofetch } from "ofetch";
+
 export default defineNuxtPlugin(() => {
   const config = useRuntimeConfig();
   const token = config.public.token;
 
-  const api = $fetch.create({
+  const api = ofetch.create({
     baseURL: config.public.apiBaseUrl,
 
     headers: {
@@ -10,8 +12,10 @@ export default defineNuxtPlugin(() => {
       Authorization: `Bearer ${token}`,
     },
 
-    onRequest: (data) => {
-      // console.log("data request :", data?.response?._data);
+    onRequest({ request }) {
+      if (process.server) {
+        // console.log("🚀 Server-side request:", request);
+      }
     },
     onResponse: (error) => {
       // console.log("error response :", error);
