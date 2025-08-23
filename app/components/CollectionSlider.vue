@@ -17,10 +17,6 @@ const chosenTab = ref({
   name: 'movies'
 });
 
-watchEffect(() => {
-  console.log('chosenTab :', chosenTab.value)
-})
-
 const setChoose = (newVal) => {
   return chosenTab.value = newVal
 }

@@ -1,6 +1,7 @@
 <script setup>
 import { defineAsyncComponent } from 'vue'
 import { useTheme } from 'vuetify'
+import { useGetMovies } from '~/api/movie/movieVueQuery';
 import HeroSection from '~/components/Header/HeroSection.vue';
 
 const Pricing = defineAsyncComponent({
@@ -18,10 +19,6 @@ const theme = useTheme();
 
 watch(theme, (newVal) => {
   console.log('newVal :', newVal)
-})
-
-watchEffect(() => {
-  console.log('theme watchEffect :', theme)
 })
 
 const sliders = ref([
@@ -88,6 +85,12 @@ const handlePricingRefFn = () => {
 
 onMounted(() => {
   PricingRef.value = handlePricingRefFn
+});
+
+const { data } = useGetMovies();
+
+watchEffect(() => {
+  console.log('dataaaaaaa :', data)
 })
 
 </script>

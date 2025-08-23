@@ -8,7 +8,7 @@ export default defineNuxtConfig({
   css: ["~/assets/css/main.css"],
 
   build: {
-    transpile: ["vuetify"], 
+    transpile: ["vuetify"],
   },
 
   modules: [
@@ -23,9 +23,10 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       apiBaseUrl: process.env.NUXT_PUBLIC_API_BASE_URL, // for clientSide or serverSide
-      testEnv: "testEnv value",
+      token: process.env.NUXT_PUBLIC_TOKEN, // for clientSide or serverSide
     },
     apiBaseUrl: process.env.NUXT_API_BASE_URL, // for just serverside
+    token: process.env.NUXT_TOKEN, // for just serverside
   },
 
   vuetify: {
@@ -63,7 +64,7 @@ export default defineNuxtConfig({
   tailwindcss: {
     cssPath: "~/assets/css/tailwind.css",
     config: {
-      darkMode: 'class',
+      darkMode: "class",
       theme: {
         extend: {
           fontFamily: {
@@ -169,7 +170,7 @@ export default defineNuxtConfig({
     customCollections: [
       {
         prefix: "custom",
-        dir: './app/assets/icons'
+        dir: "./app/assets/icons",
       },
     ],
   },
