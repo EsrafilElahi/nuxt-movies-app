@@ -4,7 +4,7 @@ import { useGetAllCollections } from '~/api/collectionsApi/collectionsVueQuery';
 definePageMeta({
   layout: 'movies-series-layout',
   layoutProps: {
-    title: 'collection'
+    title: 'collections'
   }
 });
 
