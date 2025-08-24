@@ -1,5 +1,5 @@
 <script setup>
-defineProps(['data', 'title', 'seeMoreUrl']);
+defineProps(['data', 'isLoading', 'title', 'seeMoreUrl']);
 
 const tabs = [
   {
@@ -24,17 +24,22 @@ const setChoose = (newVal) => {
 </script>
 
 <template>
-  <div class="mt-20 z-10 flex flex-col min-h-[300px] px-[48px] gap-4 select-none my-10 overflow-x-hidden">
-    <div class="flex justify-between items-end">
-      <span v-capitalize class="title-3 dark:text-secondary">{{ title }}</span>
+  <div>
+    <div class="mt-20 z-10 flex flex-col min-h-[300px] px-[48px] gap-4 select-none my-10 overflow-x-hidden"
+      v-if="isLoading">isLoading...</div>
 
-      <Tabs :tabs="tabs" :chosenTab="chosenTab" @setChoose="setChoose" />
-    </div>
+    <div v-else class="mt-20 z-10 flex flex-col min-h-[300px] px-[48px] gap-4 select-none my-10 overflow-x-hidden">
+      <div class="flex justify-between items-end">
+        <span v-capitalize class="title-3 dark:text-secondary">{{ title }}</span>
+
+        <Tabs :tabs="tabs" :chosenTab="chosenTab" @setChoose="setChoose" />
+      </div>
 
 
-    <div class="flex items-center flex-nowrap gap-[32px] pb-3 overflow-x-auto">
-      <div v-for="slide in data" :key="slide.id" class="w-[200px] h-[300px] flex-shrink-0 relative">
-        <CollectionFilmItem :item="slide" />
+      <div class="flex items-center flex-nowrap gap-[32px] pb-3 overflow-x-auto">
+        <div v-for="slide in data" :key="slide.id" class="w-[200px] h-[300px] flex-shrink-0 relative">
+          <CollectionFilmItem :item="slide" />
+        </div>
       </div>
     </div>
   </div>

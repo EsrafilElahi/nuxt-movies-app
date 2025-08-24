@@ -35,10 +35,10 @@ onMounted(() => {
   PricingRef.value = handlePricingRefFn
 });
 
-const { data: trendsMovies } = useGetTrendMovies();
-const { data: movies } = useGetMovies();
-const { data: series } = useGetSeries();
-const { data: collections } = useGetCollections();
+const { data: trendsMovies, isLoading: trendsMoviesIsLoading } = useGetTrendMovies();
+const { data: movies, isLoading: moviesIsLoading } = useGetMovies();
+const { data: series, isLoading: seriesIsLoading } = useGetSeries();
+const { data: collections, isLoading: collectionsIsLoading } = useGetCollections();
 
 </script>
 
@@ -46,9 +46,9 @@ const { data: collections } = useGetCollections();
   <div>
     <HeroSection />
 
-    <Slider :title="'trends'" :seeMoreUrl="'/movies'" :data="trendsMovies" />
-    <Slider :title="'movies'" :seeMoreUrl="'/movies'" :data="movies" />
-    <Slider :title="'series'" :seeMoreUrl="'/series'" :data="series" />
+    <Slider :title="'trends'" :seeMoreUrl="'/movies'" :data="trendsMovies" :isLoading="trendsMoviesIsLoading" />
+    <Slider :title="'movies'" :seeMoreUrl="'/movies'" :data="movies" :isLoading="moviesIsLoading" />
+    <Slider :title="'series'" :seeMoreUrl="'/series'" :data="series" :isLoading="seriesIsLoading" />
 
     <Suspense>
       <template #default>
@@ -62,7 +62,7 @@ const { data: collections } = useGetCollections();
       </template>
     </Suspense>
 
-    <CollectionSlider :title="'collection'" :seeMoreUrl="'/collection'" :data="collections" />
+    <CollectionSlider :title="'collection'" :seeMoreUrl="'/collection'" :data="collections" :isLoading="collectionsIsLoading" />
 
     <Studios />
 

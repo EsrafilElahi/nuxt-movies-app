@@ -8,14 +8,18 @@ definePageMeta({
   }
 });
 
-const { data: allMovies } = useGetAllMovies();
+const { data: allMovies, isLoading } = useGetAllMovies();
 
 </script>
 
 <template>
-  <div class="grid grid-cols-6 gap-10">
-    <div v-for="item in allMovies?.results" :key="item.id">
-      <FilmItem :item="item" />
+  <div>
+    <div v-if="isLoading" class="text-center mr-auto w-full">isLoading...</div>
+
+    <div v-else class="grid grid-cols-6 gap-10">
+      <div v-for="item in allMovies?.results" :key="item.id">
+        <FilmItem :item="item" />
+      </div>
     </div>
   </div>
 </template>
