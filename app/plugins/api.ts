@@ -18,12 +18,17 @@ export default defineNuxtPlugin(() => {
       }
     },
     onResponse: (error) => {
+      console.log('error :', error)
+
       // console.log("error response :", error);
     },
     onRequestError: (requestError) => {
+      console.log('requestError :', requestError)
+
       // console.log("requestError :", requestError);
     },
     onResponseError: (responseError) => {
+      console.log('responseError :', responseError)
       return Promise.reject(responseError);
 
       // if (responseError.response.status === 401) {
