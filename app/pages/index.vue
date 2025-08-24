@@ -87,12 +87,8 @@ onMounted(() => {
   PricingRef.value = handlePricingRefFn
 });
 
-const { data } = useGetMovies();
 const { data: trendsMovies } = useGetTrendMovies();
 
-watchEffect(() => {
-  console.log('getMoviesssssssss slice :', data)
-})
 
 </script>
 

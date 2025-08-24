@@ -1,27 +1,33 @@
 <script setup>
+import { useGetMovies } from '~/api/homeApi/homeVueQuery';
 import Carousel from './Carousel.vue';
 import Toolbar from './Toolbar.vue';
+import { tmdbImage } from '~/lib/tmdbImage';
 
-const slides = [
-  { id: 1, src: 'https://cdn.britannica.com/35/238335-050-2CB2EB8A/Lionel-Messi-Argentina-Netherlands-World-Cup-Qatar-2022.jpg', alt: 'Slide 3' },
-  { id: 2, src: 'https://fifpro.org/media/5chb3dva/lionel-messi_imago1019567000h.jpg?rxy=0.32986930611281567,0.18704579979466449&rnd=133378758718600000', alt: 'Slide 2' },
-  { id: 3, src: 'https://cdn.britannica.com/35/238335-050-2CB2EB8A/Lionel-Messi-Argentina-Netherlands-World-Cup-Qatar-2022.jpg', alt: 'Slide 3' },
-]
+const { data: heroSectionMovies } = useGetMovies();
+const activeItem = ref(null);
+
+const handleActiveItem = (newItem) => {
+  activeItem.value = newItem
+}
 </script>
 
 <template>
   <div class="w-full h-screen relative">
-    <NuxtImg src="https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg"
-      alt="hero section" class="w-full h-full object-cover" />
+    <NuxtImg :src="tmdbImage.poster(activeItem?.backdrop_path, 'w780')" :alt="activeItem?.title"
+      class="w-full h-full object-cover" />
+
+    <div class="absolute bottom-0 left-0 w-full h-full bg-black opacity-[50%]">
+    </div>
 
     <Toolbar />
 
-    <HeaderTextMovieInfo />
+    <HeaderTextMovieInfo :activeItem="activeItem" />
 
     <div class="absolute right-40 bottom-40 z-10">
-      <Carousel :items="slides" :options="{ loop: true, align: 'center' }"
-        :autoScroll="{ speed: 2, playOnInit: true, direction: 'forward' }" slide-size="80%" gap="1rem"
-        :show-arrows="true" :show-dots="true" :pause-on-hover="true" />
+      <Carousel @handleActiveItem="handleActiveItem" :items="heroSectionMovies" :options="{ align: 'center' }"
+        :autoScroll="{ direction: 'forward' }" slide-size="80%" gap="1rem" :show-arrows="true" :show-dots="true"
+        :pause-on-hover="true" />
     </div>
 
     <div
