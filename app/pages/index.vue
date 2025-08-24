@@ -14,65 +14,13 @@ const Pricing = defineAsyncComponent({
   },
   delay: 200,
   timeout: 3000
-})
+});
+
 const theme = useTheme();
 
 watch(theme, (newVal) => {
   console.log('newVal :', newVal)
 })
-
-const sliders = ref([
-  {
-    id: 1,
-    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg',
-    title: 'Comedy'
-  },
-  {
-    id: 2,
-    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg',
-    title: 'Comedy'
-  },
-  {
-    id: 3,
-    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg',
-    title: 'Comedy'
-  },
-  {
-    id: 4,
-    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg',
-    title: 'Comedy'
-  },
-  {
-    id: 5,
-    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg',
-    title: 'Comedy'
-  },
-  {
-    id: 6,
-    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg',
-    title: 'Comedy'
-  },
-  {
-    id: 7,
-    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg',
-    title: 'Comedy'
-  },
-  {
-    id: 8,
-    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg',
-    title: 'Comedy'
-  },
-  {
-    id: 9,
-    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg',
-    title: 'Comedy'
-  },
-  {
-    id: 10,
-    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg',
-    title: 'Comedy'
-  }
-]);
 
 const pricingRef = ref(null);
 const PricingRef = useState('handlePricingRef');
@@ -91,10 +39,6 @@ const { data: trendsMovies } = useGetTrendMovies();
 const { data: movies } = useGetMovies();
 const { data: series } = useGetSeries();
 const { data: collections } = useGetCollections();
-
-watchEffect(() => {
-  console.log('collections :', collections);
-})
 
 </script>
 
