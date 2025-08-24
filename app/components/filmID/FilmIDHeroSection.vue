@@ -1,45 +1,24 @@
 <script setup>
+import { tmdbImage } from '~/lib/tmdbImage';
 import Toolbar from '../Header/Toolbar.vue';
 
-const filmIDImages = ref([
-  {
-    id: 1,
-    src: "https://static01.nyt.com/images/2019/05/17/arts/johnwickaction1/johnwickaction1-superJumbo.jpg"
-  },
-  {
-    id: 2,
-    src: "https://static01.nyt.com/images/2019/05/17/arts/johnwickaction1/johnwickaction1-superJumbo.jpg"
-  },
-  {
-    id: 3,
-    src: "https://static01.nyt.com/images/2019/05/17/arts/johnwickaction1/johnwickaction1-superJumbo.jpg"
-  },
-  {
-    id: 4,
-    src: "https://static01.nyt.com/images/2019/05/17/arts/johnwickaction1/johnwickaction1-superJumbo.jpg"
-  },
-  {
-    id: 5,
-    src: "https://static01.nyt.com/images/2019/05/17/arts/johnwickaction1/johnwickaction1-superJumbo.jpg"
-  }
-])
+defineProps(['dataFilmID'])
 
 </script>
 
 <template>
   <div class="w-full h-screen relative">
-    <NuxtImg
-      src="https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/7967285/JohnWicksHorribleHair.jpg?quality=90&strip=all&crop=0.012500000000003,0,99.975,100"
-      alt="hero section" class="w-full h-full object-cover" />
+    <NuxtImg :src="tmdbImage.backdrop(dataFilmID?.backdrop_path)" :alt="dataFilmID?.title"
+      class="w-full h-full object-cover" />
 
     <Toolbar />
 
-    <FilmIDHeaderTextMovieInfo />
-    <FilmIDHeaderBtnMovieInfo />
+    <FilmIDHeaderTextMovieInfo :dataFilmID="dataFilmID" />
+    <FilmIDHeaderBtnMovieInfo :dataFilmID="dataFilmID" />
 
 
     <div class="grid grid-cols-5 gap-10 px-[48px] absolute bottom-0 left-0 z-10 -mb-12">
-      <FilmIDPictures v-for="item in filmIDImages" :key="item.id" :item="item" />
+      <FilmIDPictures v-for="item in dataFilmID?.production_companies" :key="item.id" :item="item" />
     </div>
 
     <div

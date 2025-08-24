@@ -1,10 +1,13 @@
 <script setup>
+defineProps(['dataFilmID'])
+
 </script>
 
 <template>
   <div class="absolute left-[100px] top-[40%] z-10 max-w-[500px]">
-    <h1 class="title-2 dark:text-secondary">John Wick 4</h1>
-    <p class="body-medium dark:text-secondary">1h 54m - 2023-USA</p>
+    <h1 class="title-2 dark:text-secondary">{{ dataFilmID?.title }}</h1>
+    <p class="body-medium dark:text-secondary">{{ dataFilmID?.release_date + ' - ' + dataFilmID?.origin_country?.[0] }}
+    </p>
 
     <div class="flex items-center gap-2 mt-4">
       <div

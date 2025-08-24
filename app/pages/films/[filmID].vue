@@ -1,68 +1,18 @@
 <script setup>
-const sliders = ref([
-  {
-    id: 1,
-    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg',
-    title: 'Comedy'
-  },
-  {
-    id: 2,
-    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg',
-    title: 'Comedy'
-  },
-  {
-    id: 3,
-    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg',
-    title: 'Comedy'
-  },
-  {
-    id: 4,
-    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg',
-    title: 'Comedy'
-  },
-  {
-    id: 5,
-    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg',
-    title: 'Comedy'
-  },
-  {
-    id: 6,
-    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg',
-    title: 'Comedy'
-  },
-  {
-    id: 7,
-    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg',
-    title: 'Comedy'
-  },
-  {
-    id: 8,
-    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg',
-    title: 'Comedy'
-  },
-  {
-    id: 9,
-    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg',
-    title: 'Comedy'
-  },
-  {
-    id: 10,
-    img: 'https://wallpapercat.com/w/full/1/9/1/118652-3840x2160-desktop-4k-avengers-background-image.jpg',
-    title: 'Comedy'
-  }
-]);
+import { useGetFilmID, useGetSimilarFilmID } from '~/api/filmIDApi/filmIDVueQuery';
+const route = useRoute();
+const filmID = route?.params?.filmID
 
-const movieName = 'john wick 4'
+const { data: dataFilmID } = useGetFilmID(filmID)
+const { data: dataSimilarFilmID } = useGetSimilarFilmID(filmID)
 
 </script>
 
 <template>
   <div>
-    <FilmIDHeroSection />
+    <FilmIDHeroSection :dataFilmID="dataFilmID" />
+    <FilmIDTextInfo :dataFilmID="dataFilmID" />
 
-    <FilmIDTextInfo />
-    <FilmIDCharacters />
-
-    <Slider :title="'suggestion like ' + movieName" :seeMoreUrl="'/movies'" :data="sliders" />
+    <Slider :title="'suggestion like ' + dataFilmID?.title" :seeMoreUrl="'/movies'" :data="dataSimilarFilmID" />
   </div>
 </template>

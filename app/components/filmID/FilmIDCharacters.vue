@@ -1,4 +1,7 @@
 <script setup>
+const props = defineProps(['dataFilmID']);
+
+
 const casts = [
   {
     id: 1,

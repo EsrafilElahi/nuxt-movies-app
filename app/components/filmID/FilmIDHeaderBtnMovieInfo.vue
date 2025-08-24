@@ -1,5 +1,7 @@
 <script setup>
 const isDarkMode = useDarkTheme();
+defineProps(['dataFilmID'])
+
 </script>
 
 <template>
