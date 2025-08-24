@@ -6,7 +6,7 @@ defineProps(['item'])
 
 <template>
   <NuxtLink :to="`/collection/${item.id}`" class="w-[200px] h-[300px] rounded-lg cursor-pointer relative">
-    <NuxtImg :src="tmdbImage.backdrop(item.backdrop_path)" :alt="item.name"
+    <NuxtImg :src="tmdbImage.backdrop(item?.poster_path)" :alt="item.name"
       class="w-full h-[300px] object-cover rounded-lg cursor-pointer" />
     <div class="absolute inset-0 bg-black !opacity-[50%] rounded-lg z-10 cursor-pointer"></div>
 

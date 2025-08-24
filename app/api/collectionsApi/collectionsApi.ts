@@ -10,4 +10,12 @@ export const collectionsApi = {
       },
     });
   },
+  getCollectionID: async (collectionID: any) => {
+    const { $api } = useNuxtApp();
+    return await $api(`/collection/${collectionID}`, {
+      params: {
+        language: "en-US",
+      },
+    });
+  },
 };

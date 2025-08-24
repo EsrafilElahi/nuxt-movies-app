@@ -16,3 +16,20 @@ export const useGetAllCollections = () => {
   }
   return { data, isLoading, isError, error };
 };
+
+export const useGetCollectionID = (collectionID: any) => {
+  const { data, isLoading, isError, error } = useQuery({
+    queryKey: ["collectionID", collectionID],
+    queryFn: () => collectionsApi.getCollectionID(collectionID),
+    enabled: !!collectionID,
+  });
+
+  if (isError.value) {
+    throw createError({
+      statusCode: 500,
+      message: error.value?.message || "Server error",
+      fatal: false,
+    });
+  }
+  return { data, isLoading, isError, error };
+};

@@ -19,7 +19,6 @@ const tabs = [
   }
 ];
 
-
 const chosenTab = ref({
   id: 1,
   name: 'movies'
