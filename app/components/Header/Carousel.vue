@@ -2,14 +2,14 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import EmblaCarousel from 'embla-carousel'
 import { tmdbImage } from '~/lib/tmdbImage'
-// import AutoScroll from 'embla-carousel-auto-scroll'
+import AutoScroll from 'embla-carousel-auto-scroll'
 
 const emit = defineEmits(['handleActiveItem'])
 
 const props = defineProps({
   items: { type: Array, required: true },
-  options: { type: Object, default: () => ({ loop: false }) },
-  // autoScroll: { type: Object, default: () => ({ speed: 4, playOnInit: true }) }
+  options: { type: Object, default: () => (AutoScroll({ loop: false })) },
+  autoScroll: { type: Object, default: () => ({ speed: 4, playOnInit: true }) }
 })
 
 const emblaNode = ref(null)

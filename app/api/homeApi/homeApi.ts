@@ -1,5 +1,5 @@
 export const homeApi = {
-  getMovies: async () => {
+  getHeroSectionMovies: async () => {
     const { $api } = useNuxtApp();
 
     const { data } = await useAsyncData(
@@ -28,10 +28,48 @@ export const homeApi = {
 
   getTrendMovies: async () => {
     const { $api } = useNuxtApp();
-    return await $api("/trending/all/day", {
+    const response = await $api("/trending/all/day", {
       params: {
         language: "en-US",
       },
     });
+
+    return response?.results?.slice(0, 10);
+  },
+
+  getMovies: async () => {
+    const { $api } = useNuxtApp();
+    const response = await $api("/trending/movie/day", {
+      params: {
+        language: "en-US",
+      },
+    });
+
+    return response?.results?.slice(0, 10);
+  },
+
+  getSeries: async () => {
+    const { $api } = useNuxtApp();
+    const response = await $api("/trending/tv/day", {
+      params: {
+        language: "en-US",
+      },
+    });
+
+    return response?.results?.slice(0, 10);
+  },
+
+  getCollections: async () => {
+    const { $api } = useNuxtApp();
+    const response = await $api("/search/collection", {
+      params: {
+        query: "friends",
+        include_adult: true,
+        language: "en-US",
+        page: "1",
+      },
+    });
+
+    return response?.results?.slice(0, 10);
   },
 };

@@ -8,7 +8,9 @@ const iconName = computed(() => {
 </script>
 
 <template>
-  <KeepAlive>
-    <Icon :name="iconName" size="75" />
-  </KeepAlive>
+  <NuxtLink to="/">
+    <KeepAlive>
+      <Icon :name="iconName" size="75" />
+    </KeepAlive>
+  </NuxtLink>
 </template>

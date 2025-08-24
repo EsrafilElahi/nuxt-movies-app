@@ -2,7 +2,6 @@
 const props = defineProps(['data', 'title', 'seeMoreUrl']);
 const router = useRouter();
 
-
 const handleRouteSeeMore = () => {
   return router.push(props.seeMoreUrl)
 }

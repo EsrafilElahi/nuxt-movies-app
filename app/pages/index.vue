@@ -1,7 +1,7 @@
 <script setup>
 import { defineAsyncComponent } from 'vue'
 import { useTheme } from 'vuetify'
-import { useGetMovies, useGetTrendMovies } from '~/api/homeApi/homeVueQuery';
+import { useGetCollections, useGetMovies, useGetSeries, useGetTrendMovies } from '~/api/homeApi/homeVueQuery';
 import HeroSection from '~/components/Header/HeroSection.vue';
 
 const Pricing = defineAsyncComponent({
@@ -88,7 +88,13 @@ onMounted(() => {
 });
 
 const { data: trendsMovies } = useGetTrendMovies();
+const { data: movies } = useGetMovies();
+const { data: series } = useGetSeries();
+const { data: collections } = useGetCollections();
 
+watchEffect(() => {
+  console.log('collections :', collections);
+})
 
 </script>
 
@@ -96,9 +102,9 @@ const { data: trendsMovies } = useGetTrendMovies();
   <div>
     <HeroSection />
 
-    <Slider :title="'trends'" :seeMoreUrl="'/movies'" :data="sliders" />
-    <Slider :title="'movies'" :seeMoreUrl="'/movies'" :data="sliders" />
-    <Slider :title="'series'" :seeMoreUrl="'/series'" :data="sliders" />
+    <Slider :title="'trends'" :seeMoreUrl="'/movies'" :data="trendsMovies" />
+    <Slider :title="'movies'" :seeMoreUrl="'/movies'" :data="movies" />
+    <Slider :title="'series'" :seeMoreUrl="'/series'" :data="series" />
 
     <Suspense>
       <template #default>
@@ -112,7 +118,7 @@ const { data: trendsMovies } = useGetTrendMovies();
       </template>
     </Suspense>
 
-    <CollectionSlider :title="'collection'" :seeMoreUrl="'/collection'" :data="sliders" />
+    <CollectionSlider :title="'collection'" :seeMoreUrl="'/collection'" :data="collections" />
 
     <Studios />
 

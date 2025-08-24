@@ -45,7 +45,7 @@ const studiosList = ref([
 
 <template>
   <div class="px-[148px] my-10">
-    <h2 class="title-2 text-center">Studios</h2>
+    <h2 class="title-2 text-center dark:text-secondary">Studios</h2>
 
     <div class="grid grid-cols-5 gap-5 mt-10">
 

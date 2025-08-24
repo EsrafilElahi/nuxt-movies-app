@@ -1,10 +1,10 @@
 <script setup>
-import { useGetMovies } from '~/api/homeApi/homeVueQuery';
+import { useGetHeroSectionMovies } from '~/api/homeApi/homeVueQuery';
 import Carousel from './Carousel.vue';
 import Toolbar from './Toolbar.vue';
 import { tmdbImage } from '~/lib/tmdbImage';
 
-const { data: heroSectionMovies } = useGetMovies();
+const { data: heroSectionMovies } = useGetHeroSectionMovies();
 const activeItem = ref(null);
 
 const handleActiveItem = (newItem) => {
