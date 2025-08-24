@@ -1,8 +1,11 @@
 <script setup>
+import { useSearchDataStore } from '~/stores/useSearchDataStore'
+
 const config = useRuntimeConfig();
 const token = config.public.token;
 
 const { title } = defineProps(["title"]);
+const searchDataStore = useSearchDataStore();
 
 const value = ref();
 const debouncedValue = useDebounce(value, 500);
@@ -51,6 +54,13 @@ watch(() => title, () => {
 onBeforeRouteLeave((to, from, next) => {
   value.value = null;
   next();
+});
+
+watch(data, (newData) => {
+  searchDataStore.setSearchData(newData);
+});
+watch(pending, (isLoading) => {
+  searchDataStore.setSearchDataIsLoading(isLoading);
 });
 
 

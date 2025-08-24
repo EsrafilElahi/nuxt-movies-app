@@ -1,4 +1,5 @@
 <script setup>
+import { useSearchDataStore } from '~/stores/useSearchDataStore';
 import { useGetAllCollections } from '~/api/collectionsApi/collectionsVueQuery';
 
 definePageMeta({
@@ -7,6 +8,11 @@ definePageMeta({
     title: 'collections'
   }
 });
+
+const searchDataStore = useSearchDataStore();
+
+const searchData = computed(() => searchDataStore?.getSearchData);
+const searchIsLoading = computed(() => searchDataStore.getSearchDataIsLoading);
 
 const tabs = [
   {
@@ -26,15 +32,28 @@ const chosenTab = ref({
 
 const setChoose = (newVal) => {
   return chosenTab.value = newVal
-}
+};
 
-const { data: allCollections, isLoading } = useGetAllCollections()
+const { data: allCollections, isLoading } = useGetAllCollections();
+
+const filteredData = computed(() => {
+  if (searchData.value?.results?.length > 0) {
+    return searchData.value;
+  }
+  else {
+    return allCollections.value || { results: [] };
+  }
+});
+
+const filteredLoading = computed(() => {
+  return searchIsLoading.value || isLoading.value;
+});
 
 </script>
 
 <template>
   <div>
-    <div v-if="isLoading" class="text-center mr-auto w-full">isLoading...</div>
+    <div v-if="filteredLoading" class="text-center mr-auto w-full">isLoading...</div>
 
     <div v-else class="">
       <div class="flex justify-between items-end mb-3">
@@ -44,7 +63,7 @@ const { data: allCollections, isLoading } = useGetAllCollections()
       </div>
 
       <div class="grid grid-cols-6 gap-10">
-        <div v-for="item in allCollections?.results" :key="item.id">
+        <div v-for="item in filteredData?.results" :key="item.id">
           <CollectionFilmItem :item="item" />
         </div>
       </div>
